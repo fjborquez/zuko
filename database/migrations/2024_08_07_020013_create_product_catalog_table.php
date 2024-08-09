@@ -17,6 +17,9 @@ return new class extends Migration
             $table->foreignId('brand_id')->nullable()->constrained('product_brands');
             $table->foreignId('type_id')->constrained('product_types');
             $table->foreignId('presentation_id')->nullable()->constrained('product_presentations');
+
+            $table->unique(['category_id', 'brand_id', 'type_id', 'presentation_id'], 'category_brand_type_presentation_unique');
+
             $table->timestamps();
         });
     }

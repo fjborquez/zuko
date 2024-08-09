@@ -29,7 +29,7 @@ class ProductCatalogSeeder extends Seeder
                 ['id' => 16, 'category_id' => 9, 'brand_id' => 9, 'type_id' => 65, 'presentation_id' => 84],
                 ['id' => 17, 'category_id' => 10, 'brand_id' => 10, 'type_id' => 48, 'presentation_id' => 14],
                 ['id' => 18, 'category_id' => 11, 'brand_id' => 12, 'type_id' => 42, 'presentation_id' => 69],
-                ['id' => 19, 'category_id' => 11, 'brand_id' => 28, 'type_id' => 45, 'presentation_id' => 73],
+                ['id' => 19, 'category_id' => 12, 'brand_id' => 19, 'type_id' => 45, 'presentation_id' => 73],
                 ['id' => 20, 'category_id' => 6, 'brand_id' => 15, 'type_id' => 4, 'presentation_id' => 42],
                 ['id' => 21, 'category_id' => 1, 'brand_id' => 1, 'type_id' => 6, 'presentation_id' => 1],
                 ['id' => 22, 'category_id' => 2, 'brand_id' => 17, 'type_id' => 31, 'presentation_id' => 64],
@@ -54,7 +54,7 @@ class ProductCatalogSeeder extends Seeder
                 ['id' => 43, 'category_id' => 7, 'brand_id' => 7, 'type_id' => 22, 'presentation_id' => 78],
                 ['id' => 44, 'category_id' => 7, 'brand_id' => 16, 'type_id' => 21, 'presentation_id' => 57],
                 ['id' => 45, 'category_id' => 10, 'brand_id' => 10, 'type_id' => 79, 'presentation_id' => 14],
-                ['id' => 46, 'category_id' => 11, 'brand_id' => 35, 'type_id' => 102, 'presentation_id' => 100],
+                ['id' => 46, 'category_id' => 12, 'brand_id' => 33, 'type_id' => 102, 'presentation_id' => 100],
             ]);
         }
     }
