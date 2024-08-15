@@ -10,5 +10,6 @@ class ProductCategory extends Model
     use HasFactory;
 
     protected $table = 'product_categories';
+
     protected $fillable = ['name'];
 }
