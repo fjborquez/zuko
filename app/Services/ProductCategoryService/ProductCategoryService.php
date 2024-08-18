@@ -6,7 +6,8 @@ use App\Contracts\Services\ProductCategoryService\ProductCategoryServiceInterfac
 use App\Models\ProductCategory;
 use Illuminate\Database\Eloquent\Collection;
 
-class ProductCategoryService implements ProductCategoryServiceInterface {
+class ProductCategoryService implements ProductCategoryServiceInterface
+{
     public function getList(): Collection
     {
         return ProductCategory::all();

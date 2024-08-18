@@ -3,13 +3,11 @@
 namespace Tests\Unit\App\Services\ProductCategoryService;
 
 use App\Services\ProductCategoryService\ProductCategoryService;
-
-use function PHPUnit\Framework\assertEquals;
-use function PHPUnit\Framework\assertInstanceOf;
 use Illuminate\Database\Eloquent\Collection;
 use Mockery;
-
 use Tests\TestCase;
+
+use function PHPUnit\Framework\assertEquals;
 
 class ProductCategoryServiceTest extends TestCase
 {
@@ -21,12 +19,12 @@ class ProductCategoryServiceTest extends TestCase
     {
         parent::setUp();
         $this->mockedProductCategory = Mockery::mock('overload:App\Models\ProductCategory');
-        $this->productCategoryService = new ProductCategoryService();
+        $this->productCategoryService = new ProductCategoryService;
     }
 
     public function test_should_getList_return_a_collection(): void
     {
-        $collection = new Collection();
+        $collection = new Collection;
         $collection->add(['id' => 1, 'name' => 'Bakery']);
         $collection->add(['id' => 2, 'name' => 'Dairy']);
         $this->mockedProductCategory->shouldReceive('all')->once()->andReturn($collection);
