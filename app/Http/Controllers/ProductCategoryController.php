@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Contracts\Services\ProductCategoryService\ProductCategoryServiceInterface;
+use Illuminate\Database\QueryException;
+use Symfony\Component\HttpFoundation\Response;
 
 class ProductCategoryController extends Controller
 {
@@ -12,6 +14,11 @@ class ProductCategoryController extends Controller
 
     public function list()
     {
-        return $this->productCategoryService->getList();
+        try {
+            return $this->productCategoryService->getList();
+        } catch (QueryException $exception) {
+            return response()->noContent(Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
+
     }
 }

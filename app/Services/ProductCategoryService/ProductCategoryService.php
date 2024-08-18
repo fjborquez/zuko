@@ -8,10 +8,8 @@ use Illuminate\Database\Eloquent\Collection;
 
 class ProductCategoryService implements ProductCategoryServiceInterface
 {
-    public function __construct(private readonly ProductCategory $productCategory) {}
-
     public function getList(): Collection
     {
-        return $this->productCategory->all();
+        return ProductCategory::all();
     }
 }
