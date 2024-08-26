@@ -15,7 +15,7 @@ class ProductCatalogService implements ProductCatalogServiceInterface
             ->map(function ($item) {
                 return [
                     'id' => $item->id,
-                    'description' => $item->type->description . ($item->presentation ? ' ' . $item->presentation->description : ''),
+                    'description' => $item->type->description.($item->presentation ? ' '.$item->presentation->description : ''),
                     'brand' => $item->brand->name,
                     'category' => $item->category->name,
                 ];

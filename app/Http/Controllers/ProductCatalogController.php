@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Contracts\Services\ProductCategoryService\ProductCategoryServiceInterface;
 use App\Services\ProductCatalogService\ProductCatalogService;
 use Illuminate\Database\QueryException;
 use Symfony\Component\HttpFoundation\Response;

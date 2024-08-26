@@ -16,12 +16,12 @@ class ProductCatalogServiceTest extends TestCase
     {
         parent::setUp();
 
-        $this->productCatalogService = new ProductCatalogService();
+        $this->productCatalogService = new ProductCatalogService;
     }
 
     public function test_retrieve_product_catalog_list(): void
     {
-        $catalogMock = Mockery::mock('overload:' . ProductCatalog::class);
+        $catalogMock = Mockery::mock('overload:'.ProductCatalog::class);
         $catalogMock->allows('with')->andReturnSelf();
         $catalogMock->allows('get')->andReturn(new EloquentCollection([
             (object) [
@@ -30,7 +30,7 @@ class ProductCatalogServiceTest extends TestCase
                 'presentation' => (object) ['description' => 'Sliced'],
                 'brand' => (object) ['name' => 'Ideal'],
                 'category' => (object) ['name' => 'Bakery'],
-            ]
+            ],
         ]));
 
         $catalogList = $this->productCatalogService->getList();
