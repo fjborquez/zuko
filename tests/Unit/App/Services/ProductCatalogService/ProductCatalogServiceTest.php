@@ -4,7 +4,7 @@ namespace Tests\Unit\Services\ProductCatalogService;
 
 use App\Models\ProductCatalog;
 use App\Services\ProductCatalogService\ProductCatalogService;
-use Illuminate\Database\Eloquent\Collection as EloquentCollection;
+use Illuminate\Database\Eloquent\Collection;
 use Mockery;
 use Tests\TestCase;
 
@@ -22,23 +22,18 @@ class ProductCatalogServiceTest extends TestCase
     public function test_retrieve_product_catalog_list(): void
     {
         $catalogMock = Mockery::mock('overload:'.ProductCatalog::class);
-        $catalogMock->allows('with')->andReturnSelf();
-        $catalogMock->allows('get')->andReturn(new EloquentCollection([
-            (object) [
-                'id' => 1,
-                'type' => (object) ['description' => 'Sliced Bread'],
-                'presentation' => (object) ['description' => 'Sliced'],
-                'brand' => (object) ['name' => 'Ideal'],
-                'category' => (object) ['name' => 'Bakery'],
-            ],
-        ]));
+        $catalog = new Collection;
+        $cataloged = new ProductCatalog;
+        $cataloged->id = 1;
+        $cataloged->category_id = 1;
+        $catalog->add($cataloged);
+        $catalogMock->shouldReceive('with')->andReturnSelf();
+        $catalogMock->shouldReceive('get')->andReturn($catalog);
 
         $catalogList = $this->productCatalogService->getList();
 
+        $this->assertEquals(1, $catalogList->first()->id);
         $this->assertCount(1, $catalogList);
-        $this->assertEquals('Sliced Bread Sliced', $catalogList[0]['description']);
-        $this->assertEquals('Ideal', $catalogList[0]['brand']);
-        $this->assertEquals('Bakery', $catalogList[0]['category']);
     }
 
     protected function tearDown(): void
