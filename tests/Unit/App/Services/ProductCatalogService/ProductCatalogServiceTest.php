@@ -22,8 +22,8 @@ class ProductCatalogServiceTest extends TestCase
     public function test_retrieve_product_catalog_list(): void
     {
         $catalogMock = Mockery::mock('overload:'.ProductCatalog::class);
-        $catalog = new Collection();
-        $cataloged = new ProductCatalog();
+        $catalog = new Collection;
+        $cataloged = new ProductCatalog;
         $cataloged->id = 1;
         $cataloged->category_id = 1;
         $catalog->add($cataloged);
