@@ -47,6 +47,8 @@ class ProductBrandsSeeder extends Seeder
                 ['id' => 34, 'name' => 'Viña Santa Rita', 'description' => 'Chilean winery famous for its premium wine selection.'],
                 ['id' => 35, 'name' => 'Aguas Manantial', 'description' => 'Offers a range of bottled water options across Chile.'],
                 ['id' => 36, 'name' => 'Cervecería Kunstmann', 'description' => 'Known for its craft beers, offers a variety of artisanal brews.'],
+                ['id' => 37, 'name' => 'Jumbo', 'description' => 'Jumbo supermarket'],
+                ['id' => 38, 'name' => 'Flor', 'description' => 'Sifted sugar brand'],
             ]);
         }
     }
