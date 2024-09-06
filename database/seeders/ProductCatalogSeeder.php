@@ -341,7 +341,7 @@ class ProductCatalogSeeder extends Seeder
                 ['id' => 328, 'category_id' => 5, 'brand_id' => null, 'type_id' => 315, 'presentation_id' => null],
                 ['id' => 329, 'category_id' => 12, 'brand_id' => null, 'type_id' => 316, 'presentation_id' => null],
                 ['id' => 330, 'category_id' => 4, 'brand_id' => null, 'type_id' => 317, 'presentation_id' => null],
-                ['id' => 331, 'category_id' => 9, 'brand_id' => null, 'type_id' => 318, 'presentation_id' => null]
+                ['id' => 331, 'category_id' => 9, 'brand_id' => null, 'type_id' => 318, 'presentation_id' => null],
             ]);
         }
     }
