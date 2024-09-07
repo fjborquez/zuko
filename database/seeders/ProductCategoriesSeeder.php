@@ -23,6 +23,11 @@ class ProductCategoriesSeeder extends Seeder
                 ['id' => 10, 'name' => 'Instant and Soups'],
                 ['id' => 11, 'name' => 'Beverages'],
                 ['id' => 12, 'name' => 'Alcoholic Beverages'],
+                ['id' => 13, 'name' => 'Frozen Foods'],
+                ['id' => 14, 'name' => 'Sweeteners'],
+                ['id' => 15, 'name' => 'Broths and Stocks'],
+                ['id' => 16, 'name' => 'Cereals'],
+                ['id' => 17, 'name' => 'Canned and Preserved'],
             ]);
         }
     }
