@@ -15,14 +15,14 @@ class ProductCategoryServiceTest extends TestCase
 
     private $productCategoryService;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
         $this->mockedProductCategory = Mockery::mock('overload:App\Models\ProductCategory');
         $this->productCategoryService = new ProductCategoryService;
     }
 
-    public function test_should_getList_return_a_collection(): void
+    public function test_should_get_list_return_a_collection(): void
     {
         $collection = new Collection;
         $collection->add(['id' => 1, 'name' => 'Bakery']);
