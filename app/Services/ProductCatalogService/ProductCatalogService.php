@@ -12,4 +12,9 @@ class ProductCatalogService implements ProductCatalogServiceInterface
     {
         return ProductCatalog::with(['category', 'brand', 'type', 'presentation'])->get();
     }
+
+    public function create(array $data = []): ProductCatalog
+    {
+        return ProductCatalog::create($data);
+    }
 }
