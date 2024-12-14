@@ -17,6 +17,8 @@ class ProductCategoryController extends Controller
         try {
             return $this->productCategoryService->getList();
         } catch (QueryException $exception) {
+            report($exception);
+
             return response()->noContent(Response::HTTP_INTERNAL_SERVER_ERROR);
         }
 
