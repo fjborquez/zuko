@@ -18,6 +18,7 @@ class ProductBrandController extends Controller
             return $this->productBrandService->getList();
         } catch (QueryException $exception) {
             report($exception);
+
             return response()->noContent(Response::HTTP_INTERNAL_SERVER_ERROR);
         }
 
