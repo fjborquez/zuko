@@ -35,6 +35,7 @@ class ProductCatalogController extends Controller
                 ->header('Location', url('/api/product-catalog/'.$productCatalog->id));
         } catch (QueryException $exception) {
             report($exception);
+
             return response()->noContent(Response::HTTP_INTERNAL_SERVER_ERROR);
         }
 
