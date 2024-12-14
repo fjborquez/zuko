@@ -27,9 +27,17 @@ class ProductCatalogController extends Controller
     public function store(ProductCatalogRequest $request)
     {
         $validated = $request->safe()->only($this->fields);
-        $productCatalog = $this->productCatalogService->create($validated);
 
-        return response()->noContent(Response::HTTP_CREATED)
-            ->header('Location', url('/api/product-catalog/'.$productCatalog->id));
+        try {
+            $productCatalog = $this->productCatalogService->create($validated);
+
+            return response()->noContent(Response::HTTP_CREATED)
+                ->header('Location', url('/api/product-catalog/'.$productCatalog->id));
+        } catch (QueryException $exception) {
+            report($exception);
+
+            return response()->noContent(Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
+
     }
 }
