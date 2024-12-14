@@ -28,7 +28,7 @@ class ProductCatalogRequest extends FormRequest
                 Rule::unique('product_catalog', 'category_id')
                     ->where('brand_id', $this->input('brand_id'))
                     ->where('type_id', $this->input('type_id'))
-                    ->where('presentation_id', $this->input('presentation_id'))
+                    ->where('presentation_id', $this->input('presentation_id')),
             ],
             'brand_id' => [],
             'type_id' => ['required'],
