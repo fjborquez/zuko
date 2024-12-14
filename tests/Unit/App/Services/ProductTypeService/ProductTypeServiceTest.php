@@ -1,0 +1,33 @@
+<?php
+
+namespace Tests\Unit\App\Services\ProductTypeService;
+
+use App\Services\ProductTypeService\ProductTypeService;
+use function PHPUnit\Framework\assertEquals;
+use Illuminate\Database\Eloquent\Collection;
+use Mockery;
+
+use Tests\TestCase;
+
+class ProductTypeServiceTest extends TestCase
+{
+    private $mockedProductType;
+
+    private $productTypeService;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->mockedProductType = Mockery::mock('overload:App\Models\ProductType');
+        $this->productTypeService = new ProductTypeService;
+    }
+
+    public function test_should_get_list_return_a_collection(): void
+    {
+        $collection = new Collection;
+        $collection->add(['id' => 1, 'name' => 'Soprole']);
+        $collection->add(['id' => 2, 'name' => 'Colun']);
+        $this->mockedProductType->shouldReceive('all')->andReturn($collection);
+        assertEquals(2, $this->productTypeService->getList()->count());
+    }
+}
