@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class ProductCatalogRequest extends FormRequest
 {
@@ -22,10 +23,23 @@ class ProductCatalogRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'category_id' => ['required'],
+            'category_id' => [
+                'required',
+                Rule::unique('product_catalog', 'category_id')
+                    ->where('brand_id', $this->input('brand_id'))
+                    ->where('type_id', $this->input('type_id'))
+                    ->where('presentation_id', $this->input('presentation_id'))
+            ],
             'brand_id' => [],
             'type_id' => ['required'],
             'presentation_id' => [],
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'category_id.unique' => 'There is a product catalog with the same category_id, brand_id, type_id and presentation_id',
         ];
     }
 }
