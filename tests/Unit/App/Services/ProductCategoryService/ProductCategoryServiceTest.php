@@ -2,12 +2,14 @@
 
 namespace Tests\Unit\App\Services\ProductCategoryService;
 
+use App\Models\ProductCategory;
 use App\Services\ProductCategoryService\ProductCategoryService;
 use Illuminate\Database\Eloquent\Collection;
 use Mockery;
 use Tests\TestCase;
 
 use function PHPUnit\Framework\assertEquals;
+use function PHPUnit\Framework\assertInstanceOf;
 
 class ProductCategoryServiceTest extends TestCase
 {
@@ -35,5 +37,11 @@ class ProductCategoryServiceTest extends TestCase
         $this->mockedQueryBuilder->shouldReceive('allowedSorts')->once()->andReturnSelf();
         $this->mockedQueryBuilder->shouldReceive('get')->once()->andReturn($collection);
         assertEquals(2, $this->productCategoryService->getList()->count());
+    }
+
+    public function test_should_return_a_product_category_when_create(): void
+    {
+        $this->mockedProductCategory->shouldReceive('create')->once()->andReturnSelf();
+        assertInstanceOf(ProductCategory::class, $this->productCategoryService->create([]));
     }
 }

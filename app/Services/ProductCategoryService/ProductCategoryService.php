@@ -15,4 +15,9 @@ class ProductCategoryService implements ProductCategoryServiceInterface
             ->allowedSorts('name')
             ->get();
     }
+
+    public function create(array $data = []): ProductCategory
+    {
+        return ProductCategory::create($data);
+    }
 }
