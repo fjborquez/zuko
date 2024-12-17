@@ -3,11 +3,11 @@
 namespace Tests\Unit\App\Services\ProductPresentationService;
 
 use App\Services\ProductPresentationService\ProductPresentationService;
-use function PHPUnit\Framework\assertEquals;
 use Illuminate\Database\Eloquent\Collection;
 use Mockery;
-
 use Tests\TestCase;
+
+use function PHPUnit\Framework\assertEquals;
 
 class ProductPresentationServiceTest extends TestCase
 {
