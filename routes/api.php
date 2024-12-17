@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductTypeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/product-category', [ProductCategoryController::class, 'list']);
+Route::post('/product-category', [ProductCategoryController::class, 'store']);
 
 Route::get('/product-catalog', [ProductCatalogController::class, 'list']);
 Route::post('/product-catalog', [ProductCatalogController::class, 'store']);
