@@ -22,7 +22,7 @@ class ProductCategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'unique:App\Models\ProductCategory,name', 'max:30']
+            'name' => ['required', 'unique:App\Models\ProductCategory,name', 'max:30'],
         ];
     }
 }

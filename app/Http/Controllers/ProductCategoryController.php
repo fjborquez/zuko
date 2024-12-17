@@ -27,7 +27,8 @@ class ProductCategoryController extends Controller
 
     }
 
-    public function store(ProductCategoryRequest $request) {
+    public function store(ProductCategoryRequest $request)
+    {
         $validated = $request->safe()->only($this->fields);
 
         try {

@@ -4,13 +4,12 @@ namespace Tests\Unit\App\Services\ProductCategoryService;
 
 use App\Models\ProductCategory;
 use App\Services\ProductCategoryService\ProductCategoryService;
-use function PHPUnit\Framework\assertEquals;
-use function PHPUnit\Framework\assertInstanceOf;
-
 use Illuminate\Database\Eloquent\Collection;
 use Mockery;
-
 use Tests\TestCase;
+
+use function PHPUnit\Framework\assertEquals;
+use function PHPUnit\Framework\assertInstanceOf;
 
 class ProductCategoryServiceTest extends TestCase
 {
