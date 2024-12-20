@@ -14,6 +14,7 @@ Route::get('/product-catalog', [ProductCatalogController::class, 'list']);
 Route::post('/product-catalog', [ProductCatalogController::class, 'store']);
 
 Route::get('/product-brand', [ProductBrandController::class, 'list']);
+Route::post('/product-brand', [ProductBrandController::class, 'store']);
 
 Route::get('/product-type', [ProductTypeController::class, 'list']);
 

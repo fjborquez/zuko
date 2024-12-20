@@ -12,4 +12,9 @@ class ProductBrandService implements ProductBrandServiceInterface
     {
         return ProductBrand::all();
     }
+
+    public function create(array $data = []): ProductBrand
+    {
+        return ProductBrand::create($data);
+    }
 }
