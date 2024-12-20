@@ -35,7 +35,7 @@ class ProductBrandController extends Controller
             $productBrand = $this->productBrandService->create($validated);
 
             return response()->noContent(Response::HTTP_CREATED)
-                ->header('Location', url('/api/product-brand/'.$productBrand->id));;
+                ->header('Location', url('/api/product-brand/'.$productBrand->id));
         } catch (QueryException $exception) {
             report($exception);
 
