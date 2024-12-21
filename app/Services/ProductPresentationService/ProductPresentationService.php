@@ -12,4 +12,9 @@ class ProductPresentationService implements ProductPresentationServiceInterface
     {
         return ProductPresentation::all();
     }
+
+    public function create(array $data = []): ProductPresentation
+    {
+        return ProductPresentation::create($data);
+    }
 }
