@@ -20,3 +20,4 @@ Route::get('/product-type', [ProductTypeController::class, 'list']);
 Route::post('/product-type', [ProductTypeController::class, 'store']);
 
 Route::get('/product-presentation', [ProductPresentationController::class, 'list']);
+Route::post('/product-presentation', [ProductPresentationController::class, 'store']);
