@@ -12,4 +12,9 @@ class ProductTypeService implements ProductTypeServiceInterface
     {
         return ProductType::all();
     }
+
+    public function create(array $data = []): ProductType
+    {
+        return ProductType::create($data);
+    }
 }
