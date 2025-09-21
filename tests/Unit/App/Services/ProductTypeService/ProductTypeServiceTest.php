@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Collection;
 use Mockery;
 use Tests\TestCase;
 
-use function PHPUnit\Framework\assertEmpty;
 use function PHPUnit\Framework\assertEquals;
 
 class ProductTypeServiceTest extends TestCase
