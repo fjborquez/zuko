@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\App\Services\ProductBrandService;
 
+use App\Models\ProductBrand;
 use App\Services\ProductBrandService\ProductBrandService;
 use Illuminate\Database\Eloquent\Collection;
 use Mockery;
@@ -29,5 +30,12 @@ class ProductBrandServiceTest extends TestCase
         $collection->add(['id' => 2, 'name' => 'Colun']);
         $this->mockedProductBrand->shouldReceive('all')->andReturn($collection);
         assertEquals(2, $this->productBrandService->getList()->count());
+    }
+
+    public function test_should_create_a_new_product_brand(): void
+    {
+        $this->mockedProductBrand->shouldReceive('create')->andReturn(new ProductBrand);
+        $productBrand = $this->productBrandService->create();
+        $this->assertNotNull($productBrand);
     }
 }
