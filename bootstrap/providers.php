@@ -1,10 +1,17 @@
 <?php
 
+use App\Providers\AppServiceProvider;
+use App\Providers\ProductBrandServiceProvider;
+use App\Providers\ProductCatalogServiceProvider;
+use App\Providers\ProductCategoryServiceProvider;
+use App\Providers\ProductPresentationServiceProvider;
+use App\Providers\ProductTypeServiceProvider;
+
 return [
-    App\Providers\AppServiceProvider::class,
-    App\Providers\ProductCategoryServiceProvider::class,
-    App\Providers\ProductCatalogServiceProvider::class,
-    App\Providers\ProductBrandServiceProvider::class,
-    App\Providers\ProductTypeServiceProvider::class,
-    App\Providers\ProductPresentationServiceProvider::class,
+    AppServiceProvider::class,
+    ProductCategoryServiceProvider::class,
+    ProductCatalogServiceProvider::class,
+    ProductBrandServiceProvider::class,
+    ProductTypeServiceProvider::class,
+    ProductPresentationServiceProvider::class,
 ];
