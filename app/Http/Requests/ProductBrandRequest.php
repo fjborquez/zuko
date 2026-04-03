@@ -23,15 +23,15 @@ class ProductBrandRequest extends FormRequest
     {
         return [
             'name' => ['required', 'unique:product_brands,name', 'max:30'],
-            'description' => ['required', 'unique:product_brands,description', 'max:30'],
+            'description' => ['required', 'unique:product_brands,description', 'max:100'],
         ];
     }
 
     public function messages()
     {
         return [
-            'name.unique' => 'There already a product with brand name or description',
-            'description.unique' => 'There already a product with brand name or description',
+            'name.unique' => 'There is already a product with this brand name or description',
+            'description.unique' => 'There is already a product with this brand name or description',
         ];
     }
 }
